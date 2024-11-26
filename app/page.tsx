@@ -37,7 +37,9 @@ export default function Home() {
           </div>
         </div>
         <div className="col-span-5">
-          <div>{/* <IconCloudDemo /> */}</div>
+          <div>
+            <IconCloudDemo />
+          </div>
         </div>
       </div>
       <Projects />
