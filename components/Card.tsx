@@ -1,7 +1,7 @@
-import { LiveButton } from "./LiveButton";
-import { GithubButton } from "./GithubButton";
-import { CardInfo } from "./CardInfo";
 import { CardIcon } from "./CardIcon";
+import { CardInfo } from "./CardInfo";
+import { GithubButton } from "./GithubButton";
+import { LiveButton } from "./LiveButton";
 
 export const Card = ({
   title,
@@ -19,16 +19,16 @@ export const Card = ({
   githubLink: string;
 }) => {
   return (
-    <div className="box-border">
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="w-full flex flex-col justify-between h-full rounded-lg overflow-hidden">
+      <div className="w-full">
         <CardInfo image={image} title={title} description={description} />
       </div>
       <div className="mt-4 flex flex-wrap gap-2 px-4">
-        {icons.map((icon) => (
-          <CardIcon icon={icon} key={icon} />
+        {icons.map((icon, index) => (
+          <CardIcon icon={icon} key={icon + index} />
         ))}
       </div>
-      <div className="px-4 pt-4 pb-2 flex gap-2">
+      <div className="px-4 pt-4 pb-2 flex items-center">
         <LiveButton liveLink={liveLink} />
         <GithubButton githubLink={githubLink} />
       </div>

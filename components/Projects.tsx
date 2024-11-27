@@ -22,8 +22,8 @@ import EjsIcon from "./icons/ejs.svg";
 
 export const Projects = () => {
   return (
-    <div className="w-full px-20">
-      <div className="py-10">
+    <div className="w-full bg-black pb-8">
+      <div className="py-10 px-24">
         <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold pb-6">
           Projects
         </h1>
@@ -33,7 +33,7 @@ export const Projects = () => {
           and creativity.
         </p>
       </div>
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-20">
         <Card
           title="Movix"
           description="Movix is a movie search app that allows users to search for movies and view details about them."
@@ -97,6 +97,9 @@ export const Projects = () => {
           githubLink="https://github.com/Shivamch02/property-rental"
         />
       </div>
+      {/* <div className="flex justify-center items-center pt-24 pb-6 font-bold">
+        Shivam Chaurasiya ❤️
+      </div> */}
     </div>
   );
 };
