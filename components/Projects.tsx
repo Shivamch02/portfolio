@@ -22,8 +22,13 @@ import EjsIcon from "./icons/ejs.svg";
 
 export const Projects = () => {
   return (
+<<<<<<< HEAD
     <div className="w-full bg-black pb-8">
       <div className="py-10 px-24">
+=======
+    <div className="w-full bg-black">
+      <div className="py-10 px-20">
+>>>>>>> ed6259dd79c1651e5fbd2a28b083c87dc001a50f
         <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold pb-6">
           Projects
         </h1>
@@ -97,9 +102,15 @@ export const Projects = () => {
           githubLink="https://github.com/Shivamch02/property-rental"
         />
       </div>
+<<<<<<< HEAD
       {/* <div className="flex justify-center items-center pt-24 pb-6 font-bold">
         Shivam Chaurasiya ❤️
       </div> */}
+=======
+      <div className="flex justify-center items-center pt-24 pb-6 font-bold">
+        Shivam Chaurasiya ❤️
+      </div>
+>>>>>>> ed6259dd79c1651e5fbd2a28b083c87dc001a50f
     </div>
   );
 };
