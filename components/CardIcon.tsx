@@ -6,7 +6,7 @@ export const CardIcon = ({ icon }: { icon: any }) => {
         className="flex h-8 w-8 items-center justify-center rounded-full"
         title="Next.js"
       >
-        <Image src={icon} alt="icon" width={32} height={32} />
+        <Image src={icon} alt="icon" width={25} height={25} />
       </div>
     </div>
   );
