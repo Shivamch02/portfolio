@@ -9,9 +9,8 @@ import ReactIcon from "./icons/react.svg";
 import JavascriptIcon from "./icons/javascript.svg";
 import ReduxIcon from "./icons/redux.svg";
 import CloudFlareIcon from "./icons/cloudflare.svg";
-import ExpressIcon from "./icons/express.svg";
+import ExpressIcon from "./icons/expressjs.svg";
 import MongoDBIcon from "./icons/mongodb.svg";
-import NextJsIcon from "./icons/nextjs.svg";
 import NodejsIcon from "./icons/node.svg";
 import PostgresqlIcon from "./icons/postgresql.svg";
 import TypescriptIcon from "./icons/typescript.svg";
@@ -22,13 +21,8 @@ import EjsIcon from "./icons/ejs.svg";
 
 export const Projects = () => {
   return (
-<<<<<<< HEAD
-    <div className="w-full bg-black pb-8">
-      <div className="py-10 px-24">
-=======
     <div className="w-full bg-black">
-      <div className="py-10 px-20">
->>>>>>> ed6259dd79c1651e5fbd2a28b083c87dc001a50f
+      <div className="py-10 lg:px-20 md:px-10 sm:px-6">
         <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold pb-6">
           Projects
         </h1>
@@ -38,7 +32,7 @@ export const Projects = () => {
           and creativity.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:px-20 md:px-6 px-4">
         <Card
           title="Movix"
           description="Movix is a movie search app that allows users to search for movies and view details about them."
@@ -53,7 +47,7 @@ export const Projects = () => {
           image={MediumImg}
           icons={[
             TypescriptIcon,
-            NextJsIcon,
+            ReactIcon,
             PostgresqlIcon,
             PrismaIcon,
             TailwindIcon,
@@ -102,15 +96,6 @@ export const Projects = () => {
           githubLink="https://github.com/Shivamch02/property-rental"
         />
       </div>
-<<<<<<< HEAD
-      {/* <div className="flex justify-center items-center pt-24 pb-6 font-bold">
-        Shivam Chaurasiya ❤️
-      </div> */}
-=======
-      <div className="flex justify-center items-center pt-24 pb-6 font-bold">
-        Shivam Chaurasiya ❤️
-      </div>
->>>>>>> ed6259dd79c1651e5fbd2a28b083c87dc001a50f
     </div>
   );
 };

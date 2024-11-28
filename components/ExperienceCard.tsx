@@ -19,10 +19,10 @@ export const ExperienceCard = ({
   return (
     <div className="py-4">
       <div>
-        <div className="flex mx-80 bg-gray-900 px-6 py-4 rounded-md">
-          <div className="flex items-start ">
+        <div className="flex xl:mx-80 lg:mx-40 md:mx-20 mx-6 bg-gray-900 px-6 py-4 rounded-md">
+          <div className="flex items-start">
             <Image
-              className="object-cover rounded-full"
+              className="object-cover rounded-full hidden sm:block"
               height={150}
               width={150}
               src={AvatarImg}
@@ -48,7 +48,7 @@ export const ExperienceCard = ({
               <p className="text-slate-300">{description}</p>
             </div>
             <div className="">
-              <div className="flex gap-2 py-2">
+              <div className="flex flex-wrap gap-2 py-2">
                 {skills.map((skill, index) => (
                   <TagButton language={skill} key={skill + index} />
                 ))}
