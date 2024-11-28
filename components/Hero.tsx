@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 export const Hero = () => {
   return (
     <div>
-      <div className="xl:text-4xl lg:text:4xl text-3xl font-bold relative text-center z-20 bg-clip-text text-white py-4">
+      <div className="lg:text-5xl md:text-4xl text-3xl font-bold relative text-center z-20 bg-clip-text text-white py-4">
         Shivam Chaurasiya
       </div>
       <p className="text-2xl text-center font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pb-4">

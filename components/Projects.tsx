@@ -23,7 +23,7 @@ export const Projects = () => {
   return (
     <div className="w-full bg-black">
       <div className="py-10 lg:px-20 md:px-10 sm:px-6">
-        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold pb-6">
+        <h1 className="relative z-10 text-4xl md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold pb-6">
           Projects
         </h1>
         <p className="text-gray-600 text-center text-xl md:text-2xl">
