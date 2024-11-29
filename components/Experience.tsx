@@ -2,9 +2,9 @@ import { ExperienceCard } from "./ExperienceCard";
 
 export const Experience = () => {
   return (
-    <div className="pb-32 bg-black">
+    <div className="pb-32 dark:bg-black bg-white">
       <div className="py-8">
-        <h1 className="relative z-10 text-4xl md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold pb-6">
+        <h1 className="relative z-10 text-4xl md:text-7xl  dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-b dark:from-neutral-200 dark:to-neutral-600 text-black  text-center font-sans font-bold pb-6">
           Experience
         </h1>
       </div>

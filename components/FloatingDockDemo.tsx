@@ -15,7 +15,7 @@ export function FloatingDockDemo() {
     {
       title: "Home",
       icon: (
-        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconHome className="h-full w-full text-black  dark:text-neutral-300" />
       ),
       href: "#",
     },
@@ -23,28 +23,28 @@ export function FloatingDockDemo() {
     {
       title: "Projects",
       icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconTerminal2 className="h-full w-full text-black dark:text-neutral-300" />
       ),
       href: "#",
     },
     {
       title: "Experience",
       icon: (
-        <IconListDetails className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconListDetails className="h-full w-full text-black dark:text-neutral-300" />
       ),
       href: "#",
     },
     {
       title: "Github",
       icon: (
-        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandGithub className="h-full w-full text-black dark:text-neutral-300" />
       ),
       href: "https://github.com/Shivamch02",
     },
     {
       title: "LinkedIn",
       icon: (
-        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandLinkedin className="h-full w-full text-black dark:text-neutral-300" />
       ),
       href: "https://www.linkedin.com/in/shivam-chaurasiyaa/",
     },
@@ -52,14 +52,14 @@ export function FloatingDockDemo() {
     {
       title: "Twitter",
       icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandX className="h-full w-full text-black dark:text-neutral-300" />
       ),
       href: "https://x.com/_cvam?s=09",
     },
     {
       title: "Resume",
       icon: (
-        <IconReceipt className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconReceipt className="h-full w-full text-black dark:text-neutral-300" />
       ),
       href: "https://drive.google.com/file/d/186Yb__0n27otZpyXCoXS9K4ZE7mIPr9k/view?usp=sharing",
     },

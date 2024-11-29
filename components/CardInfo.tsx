@@ -13,7 +13,7 @@ export const CardInfo = ({
     <div>
       <div className="w-full h-48">
         <Image
-          className="md:rounded-lg rounded-md hover:opacity-90"
+          className="md:rounded-tl-lg md:rounded-tr-lg rounded-tl-md rounded-tr-md hover:opacity-90 shadow-lg"
           src={image}
           alt={title} // Use title for accessibility
           layout="responsive"
