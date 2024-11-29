@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { StaticImport } from "next/image"; // For static imports
 
 export const CardInfo = ({
   title,
@@ -8,7 +7,7 @@ export const CardInfo = ({
 }: {
   title: string;
   description: string;
-  image: string | StaticImport; // Ensure the type is correct for Image component
+  image: string;
 }) => {
   return (
     <div>
