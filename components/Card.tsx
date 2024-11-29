@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { CardIcon } from "./CardIcon";
 import { CardInfo } from "./CardInfo";
 import { GithubButton } from "./GithubButton";
@@ -13,8 +14,8 @@ export const Card = ({
 }: {
   title: string;
   description: string;
-  image: any;
-  icons: string[];
+  image: string;
+  icons: ReactNode[];
   liveLink: string;
   githubLink: string;
 }) => {

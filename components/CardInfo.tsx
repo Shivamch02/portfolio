@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ReactNode } from "react";
 export const CardInfo = ({
   title,
   description,
@@ -6,7 +7,7 @@ export const CardInfo = ({
 }: {
   title: string;
   description: string;
-  image: any;
+  image: ReactNode;
 }) => {
   return (
     <div>

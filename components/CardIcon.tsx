@@ -1,5 +1,6 @@
 import Image from "next/image";
-export const CardIcon = ({ icon }: { icon: any }) => {
+import { ReactNode } from "react";
+export const CardIcon = ({ icon }: { icon: ReactNode }) => {
   return (
     <div>
       <div
