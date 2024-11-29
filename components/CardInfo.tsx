@@ -19,7 +19,7 @@ export const CardInfo = ({
           layout="responsive"
         />
       </div>
-      <div className="">
+      <div className="md:mt-8 lg:mt-4 sm:mt-40 z-20 mt-24">
         <div className="xl:mt-4 lg:-mt-7 md:-mt-4 -mt-3 px-4 font-bold text-xl mb-2">
           {title}
         </div>

@@ -20,7 +20,7 @@ export const Card = ({
 }) => {
   return (
     <div className="w-full flex flex-col justify-between h-full rounded-lg overflow-hidden">
-      <div className="w-full">
+      <div className="w-full pb-2">
         <CardInfo image={image} title={title} description={description} />
       </div>
       <div className="mt-4 flex flex-wrap gap-2 px-4">
