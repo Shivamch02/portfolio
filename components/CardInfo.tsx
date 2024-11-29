@@ -13,7 +13,7 @@ export const CardInfo = ({
     <div>
       <div className="w-full">
         <Image
-          className="md:rounded-tl-lg md:rounded-tr-lg rounded-tl-md rounded-tr-md"
+          className="rounded-tl-sm rounded-tr-sm shadow-sm"
           src={image}
           alt={title} // Use title for accessibility
           layout="responsive"

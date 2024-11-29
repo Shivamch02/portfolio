@@ -21,7 +21,7 @@ import EjsIcon from "./icons/ejs.svg";
 
 export const Projects = () => {
   return (
-    <div className="w-full dark:bg-black bg-white">
+    <div className="w-full dark:bg-black bg-white" id="projects">
       <div className=" py-10 lg:px-20 md:px-10 sm:px-6">
         <h1 className="lg:mt-10 relative z-10 text-4xl md:text-7xl  dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-b dark:from-neutral-200 dark:to-neutral-600 text-black  text-center font-sans font-bold pb-6">
           Projects

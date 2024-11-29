@@ -17,7 +17,7 @@ export function FloatingDockDemo() {
       icon: (
         <IconHome className="h-full w-full text-black  dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#home",
     },
 
     {
@@ -25,14 +25,14 @@ export function FloatingDockDemo() {
       icon: (
         <IconTerminal2 className="h-full w-full text-black dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#projects",
     },
     {
       title: "Experience",
       icon: (
         <IconListDetails className="h-full w-full text-black dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#experience",
     },
     {
       title: "Github",

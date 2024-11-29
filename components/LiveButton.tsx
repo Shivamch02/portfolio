@@ -6,7 +6,7 @@ export const LiveButton = ({ liveLink }: { liveLink?: string }) => {
       <a href={liveLink} target="_blank" rel="noreferrer">
         <button
           type="button"
-          className="dark:text-gray-900 dark:bg-white dark:hover:bg-gray-100 dark:border dark:border-gray-200 focus:ring-4 focus:outline-none dark:focus:ring-gray-100 rounded-lg text-sm px-3 py-1.5 text-center inline-flex items-center me-2 mb-2 cursor-pointer font-medium border-2 border-black text-black"
+          className="dark:text-gray-900 dark:bg-white dark:border-white dark:hover:bg-gray-100 border focus:ring-4 focus:outline-none dark:focus:ring-gray-100 rounded-md text-sm px-3 py-1.5 text-center inline-flex items-center me-2 mb-2 cursor-pointer font-medium border-black text-black"
         >
           <Image
             className="mr-2"

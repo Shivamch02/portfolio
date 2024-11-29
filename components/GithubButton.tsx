@@ -5,7 +5,7 @@ export const GithubButton = ({ githubLink }: { githubLink?: string }) => {
       <a href={githubLink} target="_blank" rel="noreferrer">
         <button
           type="button"
-          className="focus:ring-4 focus:outline-none rounded-lg text-sm px-3 py-1.5 text-center inline-flex items-center me-2 mb-2 dark:text-white cursor-pointer  font-medium text-white dark:border-white border-2 bg-black"
+          className="focus:ring-4 focus:outline-none rounded-md text-sm px-3 py-1.5 text-center inline-flex items-center me-2 mb-2 dark:text-white cursor-pointer  font-medium text-white dark:border-white border bg-black border-black"
         >
           <FaGithub className="mr-2" />
           Github
