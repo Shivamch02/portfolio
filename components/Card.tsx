@@ -19,11 +19,11 @@ export const Card = ({
   githubLink: string;
 }) => {
   return (
-    <div className="w-full flex flex-col justify-between h-full rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+    <div className="w-full flex flex-col justify-between h-full rounded-lg overflow-hidden shadow-md transform transition duration-200 hover:-translate-y-1">
       <div className="w-full pb-2">
         <CardInfo image={image} title={title} description={description} />
       </div>
-      <div className="mt-4 flex flex-wrap gap-2 px-4">
+      <div className="flex flex-wrap gap-2 px-4">
         {icons &&
           icons.map((icon, index) => (
             <CardIcon icon={icon} key={icon + index} />
