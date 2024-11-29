@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { CardIcon } from "./CardIcon";
 import { CardInfo } from "./CardInfo";
 import { GithubButton } from "./GithubButton";
@@ -14,8 +13,8 @@ export const Card = ({
 }: {
   title: string;
   description: string;
-  image: string;
-  icons: ReactNode[];
+  image: any;
+  icons: string[];
   liveLink: string;
   githubLink: string;
 }) => {
@@ -25,9 +24,10 @@ export const Card = ({
         <CardInfo image={image} title={title} description={description} />
       </div>
       <div className="mt-4 flex flex-wrap gap-2 px-4">
-        {icons.map((icon, index) => (
-          <CardIcon icon={icon} key={index} />
-        ))}
+        {icons &&
+          icons.map((icon, index) => (
+            <CardIcon icon={icon} key={icon + index} />
+          ))}
       </div>
       <div className="px-4 pt-4 pb-2 flex items-center">
         <LiveButton liveLink={liveLink} />
