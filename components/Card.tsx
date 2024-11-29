@@ -26,7 +26,7 @@ export const Card = ({
       </div>
       <div className="mt-4 flex flex-wrap gap-2 px-4">
         {icons.map((icon, index) => (
-          <CardIcon icon={icon} key={icon + index} />
+          <CardIcon icon={icon} key={index} />
         ))}
       </div>
       <div className="px-4 pt-4 pb-2 flex items-center">
