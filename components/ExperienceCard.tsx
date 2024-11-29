@@ -17,9 +17,9 @@ export const ExperienceCard = ({
   skills: string[];
 }) => {
   return (
-    <div className="py-4">
+    <div className="py-2">
       <div>
-        <div className="flex xl:mx-60 lg:mx-40 md:mx-20 mx-6 bg-gray-900 px-6 py-4 rounded-md">
+        <div className="flex xl:mx-60 lg:mx-40 md:mx-20 mx-6 dark:bg-gray-900 bg-white shadow-lg px-6 py-3 rounded-md">
           <div className="flex items-start">
             <Image
               className="object-cover rounded-full hidden sm:block"
@@ -33,19 +33,27 @@ export const ExperienceCard = ({
             <div className="flex justify-between w-full">
               <div>
                 <h2 className="text-xl font-bold text-blue-500">{jobTitle}</h2>
-                <p className="text-slate-400">{location}</p>
+                <div className="flex flex-wrap gap-2 py-2">
+                  <p className="dark:text-slate-400 text-black">{location}</p>
+                  <button
+                    type="button"
+                    className="px-2 py-1 text-xs text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold block sm:hidden"
+                  >
+                    {startDate} {" - "} {endDate}
+                  </button>
+                </div>
               </div>
               <div className="">
                 <button
                   type="button"
-                  className="px-3 py-1.5 text-sm text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
+                  className="px-2 py-1 text-sm text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold hidden sm:block"
                 >
                   {startDate} {" - "} {endDate}
                 </button>
               </div>
             </div>
             <div className="">
-              <p className="text-slate-300">{description}</p>
+              <p className="dark:text-slate-300 text-gray-600">{description}</p>
             </div>
             <div className="">
               <div className="flex flex-wrap gap-2 py-2">
