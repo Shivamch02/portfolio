@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ReactNode } from "react";
+import { StaticImport } from "next/image"; // For static imports
+
 export const CardInfo = ({
   title,
   description,
@@ -7,7 +8,7 @@ export const CardInfo = ({
 }: {
   title: string;
   description: string;
-  image: ReactNode;
+  image: string | StaticImport; // Ensure the type is correct for Image component
 }) => {
   return (
     <div>
@@ -15,7 +16,7 @@ export const CardInfo = ({
         <Image
           className="md:rounded-lg rounded-md hover:opacity-90"
           src={image}
-          alt="Movix"
+          alt={title} // Use title for accessibility
           layout="responsive"
         />
       </div>
