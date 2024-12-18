@@ -32,7 +32,7 @@ export const ExperienceCard = ({
           <div>
             <div className="flex justify-between w-full">
               <div>
-                <h2 className="text-xl font-bold text-blue-500">{jobTitle}</h2>
+                <h2 className="text-xl font-bold text-blue-600">{jobTitle}</h2>
                 <div className="flex flex-wrap gap-2 py-2">
                   <p className="dark:text-slate-400 text-black">{location}</p>
                   <button

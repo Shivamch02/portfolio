@@ -19,7 +19,7 @@ export const Card = ({
   githubLink: string;
 }) => {
   return (
-    <div className="w-full flex flex-col justify-between h-full rounded-tl-md rounded-tr-md overflow-hidden shadow-md transform transition duration-200 hover:-translate-y-1">
+    <div className="w-full flex flex-col justify-between h-full rounded-md overflow-hidden shadow-md transform transition duration-200 hover:-translate-y-1 dark:bg-neutral-900/15 backdrop-blur-md border border-white/10">
       <div className="w-full pb-2">
         <CardInfo image={image} title={title} description={description} />
       </div>

@@ -3,7 +3,7 @@ import MovixImg from "./icons/movix.png";
 import MediumImg from "./icons/medium.png";
 import NetflixGptImg from "./icons/netflix-gpt.png";
 import EasyEatsImg from "./icons/easy-eats.png";
-import PropertyRentalImg from "./icons/property-rental.png";
+import GithubCardImg from "./icons/github-card.png";
 import WanderLustImg from "./icons/wanderlust.png";
 import ReactIcon from "./icons/react.svg";
 import JavascriptIcon from "./icons/javascript.svg";
@@ -88,12 +88,12 @@ export const Projects = () => {
           liveLink="https://easy-eats-osf3.vercel.app/"
         />
         <Card
-          title="Property Rental Website"
-          description=" A property rental website built with React, Redux, and Tailwind CSS. The app allows users to browse and search for properties for rent."
-          image={PropertyRentalImg}
-          icons={[ReactIcon, JavascriptIcon, TailwindIcon]}
-          liveLink="https://totality-frontend-challenge-kappa-three.vercel.app/"
-          githubLink="https://github.com/Shivamch02/property-rental"
+          title="Github Explorer Card"
+          description="It is build with React, Typescript, and Tailwind CSS. The app allows users to search for Github users and view their profile."
+          image={GithubCardImg}
+          icons={[ReactIcon, TypescriptIcon, TailwindIcon]}
+          liveLink="https://exploregithub.vercel.app/"
+          githubLink="https://github.com/Shivamch02/Github-card"
         />
       </div>
     </div>
