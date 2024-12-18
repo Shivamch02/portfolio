@@ -84,8 +84,8 @@ export const Projects = () => {
           description=" A food ordering app built with React, Redux, and CSS. The app allows users to browse and search for restaurants."
           image={EasyEatsImg}
           icons={[ReactIcon, ReduxIcon, JavascriptIcon, CssIcon]}
-          githubLink="https://github.com/Shivamch02/Easy-Eats"
-          liveLink="https://easy-eats-osf3.vercel.app/"
+          githubLink="https://github.com/Shivamch02/easy-eat"
+          liveLink="https://easyeat.vercel.app/"
         />
         <Card
           title="Github Explorer Card"

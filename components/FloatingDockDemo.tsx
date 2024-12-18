@@ -19,7 +19,6 @@ export function FloatingDockDemo() {
       ),
       href: "#home",
     },
-
     {
       title: "Projects",
       icon: (
