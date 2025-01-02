@@ -1,6 +1,9 @@
 import { IconCloudDemo } from "../components/IconCloud";
 import { Hero } from "@/components/Hero";
 import { FloatingDockDemo } from "./FloatingDockDemo";
+import { ThemeProvider } from "../context/ThemeContext";
+import ThemeToggle from "./ThemeToggle";
+
 export const HomePage = () => {
   return (
     <div>
@@ -17,7 +20,12 @@ export const HomePage = () => {
 
       {/* Floating Dock */}
       <div className="fixed bottom-10 left-0 right-0 flex justify-center z-50">
-        <FloatingDockDemo />
+        <ThemeProvider>
+          <div className="flex gap-2">
+            <FloatingDockDemo />
+            <ThemeToggle />
+          </div>
+        </ThemeProvider>
       </div>
     </div>
   );

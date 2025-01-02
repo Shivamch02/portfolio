@@ -3,7 +3,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 
 export const ContactUs = () => {
   return (
-    <div className="dark:bg-black pb-6">
+    <div className="dark:bg-black pb-6 bg-white">
       <div className="flex justify-center items-center flex-col h-[calc(100vh-60px)]">
         <div className="flex flex-col justify-center items-center">
           <p className="xl:text-7xl md:text-5xl sm:text-4xl text-2xl dark:text-blue-700 text-black font-bold sm:font-medium">

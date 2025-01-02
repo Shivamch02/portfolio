@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { GridBackgroundDemo } from "../components/BackgroundBoxesDemo";
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,8 +33,7 @@ export default function RootLayout({
       >
         <GridBackgroundDemo />
         <Analytics />
-
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
