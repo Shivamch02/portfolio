@@ -20,8 +20,12 @@ export const CardInfo = ({
         />
       </div>
       <div className="mt-6">
-        <div className="px-4 font-bold text-xl mb-2">{title}</div>
-        <p className="px-4 mt-2 text-sm text-muted-foreground">{description}</p>
+        <div className="px-4 font-bold text-xl mb-2 text-black dark:text-white">
+          {title}
+        </div>
+        <p className="px-4 mt-2 text-sm text-muted-foreground text-gray-900 dark:text-white">
+          {description}
+        </p>
       </div>
     </div>
   );
