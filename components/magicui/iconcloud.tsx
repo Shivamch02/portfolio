@@ -1,88 +1,197 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useTheme } from "next-themes";
-import {
-  Cloud,
-  fetchSimpleIcons,
-  ICloud,
-  renderSimpleIcon,
-  SimpleIcon,
-} from "react-icon-cloud";
+import React, { useEffect, useRef, useState } from "react";
+import { renderToString } from "react-dom/server";
 
-export const cloudProps: Omit<ICloud, "children"> = {
-  containerProps: {
-    style: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
-      paddingTop: 40,
-    },
-  },
-  options: {
-    reverse: true,
-    depth: 1,
-    wheelZoom: false,
-    imageScale: 2,
-    activeCursor: "default",
-    tooltip: "native",
-    initial: [0.1, -0.1],
-    clickToFront: 500,
-    tooltipDelay: 0,
-    outlineColour: "#0000",
-    maxSpeed: 0.04,
-    minSpeed: 0.02,
-    // dragControl: false,
-  },
-};
+interface Icon {
+  x: number;
+  y: number;
+  z: number;
+  scale: number;
+  opacity: number;
+  id: number;
+}
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
-  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
-  const minContrastRatio = theme === "dark" ? 2 : 1.2;
+interface IconCloudProps {
+  icons?: React.ReactNode[];
+  images?: string[];
+}
 
-  return renderSimpleIcon({
-    icon,
-    bgHex,
-    fallbackHex,
-    minContrastRatio,
-    size: 42,
-    aProps: {
-      href: undefined,
-      target: undefined,
-      rel: undefined,
-      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
-    },
-  });
-};
+// function easeOutCubic(t: number): number {
+//   return 1 - Math.pow(1 - t, 3);
+// }
 
-export type DynamicCloudProps = {
-  iconSlugs: string[];
-};
+export function IconCloud({ icons, images }: IconCloudProps) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [iconPositions, setIconPositions] = useState<Icon[]>([]);
+  const [rotation] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
+  // const [targetRotation, setTargetRotation] = useState<{
+  //   x: number;
+  //   y: number;
+  //   startX: number;
+  //   startY: number;
+  //   distance: number;
+  //   startTime: number;
+  //   duration: number;
+  // } | null>(null);
 
-type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
-
-export function IconCloud({ iconSlugs }: DynamicCloudProps) {
-  const [data, setData] = useState<IconData | null>(null);
-  const { theme } = useTheme();
+  const animationFrameRef = useRef<number>();
+  const rotationRef = useRef(rotation);
+  const iconCanvasesRef = useRef<HTMLCanvasElement[]>([]);
+  const imagesLoadedRef = useRef<boolean[]>([]);
 
   useEffect(() => {
-    fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
-  }, [iconSlugs]);
+    const items = icons || images || [];
+    imagesLoadedRef.current = new Array(items.length).fill(false);
 
-  const renderedIcons = useMemo(() => {
-    if (!data) return null;
+    const newIconCanvases = items.map((item, index) => {
+      const offscreen = document.createElement("canvas");
+      offscreen.width = 40;
+      offscreen.height = 40;
+      const offCtx = offscreen.getContext("2d");
 
-    return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light")
-    );
-  }, [data, theme]);
+      if (offCtx) {
+        if (images) {
+          const img = new Image();
+          img.crossOrigin = "anonymous";
+          img.src = items[index] as string;
+          img.onload = () => {
+            offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
+            offCtx.beginPath();
+            offCtx.arc(20, 20, 20, 0, Math.PI * 2);
+            offCtx.clip();
+            offCtx.drawImage(img, 0, 0, 40, 40);
+            imagesLoadedRef.current[index] = true;
+          };
+        } else {
+          offCtx.scale(0.4, 0.4);
+          const svgString = renderToString(item as React.ReactElement);
+          const img = new Image();
+          img.src = "data:image/svg+xml;base64," + btoa(svgString);
+          img.onload = () => {
+            offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
+            offCtx.drawImage(img, 0, 0);
+            imagesLoadedRef.current[index] = true;
+          };
+        }
+      }
+      return offscreen;
+    });
+
+    iconCanvasesRef.current = newIconCanvases;
+  }, [icons, images]);
+
+  useEffect(() => {
+    const items = icons || images || [];
+    const newIcons: Icon[] = [];
+    const numIcons = items.length || 20;
+
+    const offset = 2 / numIcons;
+    const increment = Math.PI * (3 - Math.sqrt(5));
+
+    for (let i = 0; i < numIcons; i++) {
+      const y = i * offset - 1 + offset / 2;
+      const r = Math.sqrt(1 - y * y);
+      const phi = i * increment;
+
+      newIcons.push({
+        x: Math.cos(phi) * r * 100,
+        y: y * 100,
+        z: Math.sin(phi) * r * 100,
+        scale: 1,
+        opacity: 1,
+        id: i,
+      });
+    }
+
+    setIconPositions(newIcons);
+  }, [icons, images]);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    setIsDragging(true);
+    setLastMousePos({ x: e.clientX, y: e.clientY });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (isDragging) {
+      const deltaX = e.clientX - lastMousePos.x;
+      const deltaY = e.clientY - lastMousePos.y;
+
+      rotationRef.current = {
+        x: rotationRef.current.x + deltaY * 0.002,
+        y: rotationRef.current.y + deltaX * 0.002,
+      };
+
+      setLastMousePos({ x: e.clientX, y: e.clientY });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (!canvas || !ctx) return;
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+
+      iconPositions.forEach((icon, index) => {
+        const cosX = Math.cos(rotationRef.current.x);
+        const sinX = Math.sin(rotationRef.current.x);
+        const cosY = Math.cos(rotationRef.current.y);
+        const sinY = Math.sin(rotationRef.current.y);
+
+        const rotatedX = icon.x * cosY - icon.z * sinY;
+        const rotatedZ = icon.x * sinY + icon.z * cosY;
+        const rotatedY = icon.y * cosX + rotatedZ * sinX;
+
+        const scale = (rotatedZ + 200) / 300;
+        const opacity = Math.max(0.2, Math.min(1, (rotatedZ + 150) / 200));
+
+        ctx.save();
+        ctx.translate(centerX + rotatedX, centerY + rotatedY);
+        ctx.scale(scale, scale);
+        ctx.globalAlpha = opacity;
+
+        if (imagesLoadedRef.current[index]) {
+          ctx.drawImage(iconCanvasesRef.current[index], -20, -20, 40, 40);
+        }
+
+        ctx.restore();
+      });
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [iconPositions]);
 
   return (
-    // @ts-expect-error Type mismatch with ICloud children
-    <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
-    </Cloud>
+    <canvas
+      ref={canvasRef}
+      width={600}
+      height={600}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+      className="rounded-lg"
+      aria-label="Interactive 3D Icon Cloud"
+      role="img"
+    />
   );
 }

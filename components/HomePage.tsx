@@ -11,7 +11,7 @@ export const HomePage = () => {
         <div className="flex flex-col md:justify-center items-center xl:col-span-7 lg:col-span-6 md:col-span-1 md:-mt-10 mt-16 ">
           <Hero />
         </div>
-        <div className="xl:col-span-5 lg:col-span-6 w-full md:col-span-1 md:mt-10 sm:mt-32 -mt-64">
+        <div className="xl:col-span-5 lg:col-span-6 w-full md:col-span-1 md:mt-10 sm:mt-32 -mt-20">
           <div>
             <IconCloudDemo />
           </div>

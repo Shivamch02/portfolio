@@ -3,8 +3,11 @@ import { IconCloud } from "@/components/magicui/iconcloud";
 const slugs = [
   "typescript",
   "javascript",
+  "dart",
   "java",
   "react",
+  "flutter",
+  "android",
   "html5",
   "css3",
   "nodedotjs",
@@ -14,23 +17,30 @@ const slugs = [
   "amazonaws",
   "postgresql",
   "firebase",
+  "nginx",
   "vercel",
   "testinglibrary",
   "jest",
+  "cypress",
   "docker",
   "git",
+  "jira",
   "github",
+  "gitlab",
   "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
   "figma",
-  "mysql",
-  "mongodb",
-  "ejs",
 ];
 
 export function IconCloudDemo() {
+  const images = slugs.map(
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
+  );
+
   return (
-    <div className="absolute flex w-full lg:max-w-lg items-center justify-center overflow-hidden rounded-lg opacity-100">
-      <IconCloud iconSlugs={slugs} />
+    <div className="flex items-center justify-center overflow-hidden">
+      <IconCloud images={images} />
     </div>
   );
 }
