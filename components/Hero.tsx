@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { TypewriterEffectSmoothDemo } from "./TypewriterEffectSmooth";
 export const Hero = () => {
   return (
-    <div className="flex justify-center items-center flex-col ">
+    <div className="flex justify-center items-center flex-col md:mt-16 lg:mt-0">
       <div className="xl:text-6xl md:text-5xl text-4xl font-bold relative text-center z-20 bg-clip-text dark:text-white  py-4 text-blue-600">
         Shivam Chaurasiya
       </div>

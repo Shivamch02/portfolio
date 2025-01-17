@@ -60,15 +60,12 @@ export function FloatingDockDemo() {
       icon: (
         <IconReceipt className="h-full w-full text-black dark:text-neutral-300" />
       ),
-      href: "https://drive.google.com/file/d/186Yb__0n27otZpyXCoXS9K4ZE7mIPr9k/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1RVMBhVH4HtgJ_jZYnfpEy3bssI8E6Etd/view?usp=sharing",
     },
   ];
   return (
     <div className="flex items-center justify-center w-full z-50 sticky top-full">
-      <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
-        items={links}
-      />
+      <FloatingDock mobileClassName="translate-y-20" items={links} />
     </div>
   );
 }

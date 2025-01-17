@@ -113,9 +113,9 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       const z = Math.sin(phi) * r;
 
       newIcons.push({
-        x: x * 100,
-        y: y * 100,
-        z: z * 100,
+        x: x * 200, // Increased multiplier for larger canvas
+        y: y * 200, // Increased multiplier for larger canvas
+        z: z * 200, // Increased multiplier for larger canvas
         scale: 1,
         opacity: 1,
         id: i,
@@ -148,7 +148,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       const screenX = canvasRef.current!.width / 2 + rotatedX;
       const screenY = canvasRef.current!.height / 2 + rotatedY;
 
-      const scale = (rotatedZ + 200) / 300;
+      const scale = (rotatedZ + 400) / 600;
       const radius = 20 * scale;
       const dx = x - screenX;
       const dy = y - screenY;
@@ -261,8 +261,8 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         const rotatedZ = icon.x * sinY + icon.z * cosY;
         const rotatedY = icon.y * cosX + rotatedZ * sinX;
 
-        const scale = (rotatedZ + 200) / 300;
-        const opacity = Math.max(0.2, Math.min(1, (rotatedZ + 150) / 200));
+        const scale = (rotatedZ + 400) / 600;
+        const opacity = Math.max(0.2, Math.min(1, (rotatedZ + 300) / 400));
 
         ctx.save();
         ctx.translate(
@@ -273,7 +273,6 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         ctx.globalAlpha = opacity;
 
         if (icons || images) {
-          // Only try to render icons/images if they exist
           if (
             iconCanvasesRef.current[index] &&
             imagesLoadedRef.current[index]
@@ -281,7 +280,6 @@ export function IconCloud({ icons, images }: IconCloudProps) {
             ctx.drawImage(iconCanvasesRef.current[index], -20, -20, 40, 40);
           }
         } else {
-          // Show numbered circles if no icons/images are provided
           ctx.beginPath();
           ctx.arc(0, 0, 20, 0, Math.PI * 2);
           ctx.fillStyle = "#4444ff";
