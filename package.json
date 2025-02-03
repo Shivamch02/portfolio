@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.15",
     "@tabler/icons-react": "^3.22.0",
     "@vercel/analytics": "^1.4.1",
     "class-variance-authority": "^0.7.1",

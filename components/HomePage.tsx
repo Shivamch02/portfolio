@@ -18,16 +18,13 @@ export const HomePage = () => {
         </div>
       </div>
 
-      {/* Floating Dock */}
       <div className="fixed bottom-10 flex justify-center z-50 w-full">
         <ThemeProvider>
           <div className="flex sm:justify-center md:gap-2 w-full max-w-screen-md px-4 items-center">
-            {/* FloatingDockDemo will be on the left in desktop, hidden in mobile */}
             <div className="ml-32 sm:ml-0 -mt-7 sm:-mt-0">
               <FloatingDockDemo />
             </div>
 
-            {/* ThemeToggle will always be on the right */}
             <div className="flex sm:justify-end -ml-24 sm:-ml-0">
               <ThemeToggle />
             </div>
