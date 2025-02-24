@@ -13,7 +13,7 @@ const ThemeToggle: React.FC = () => {
       onClick={toggleTheme}
       className="py-3 px-3 rounded-full focus:outline-none border border-black dark:border-white bg-white dark:bg-black text-black dark:text-white bg-transparent backdrop-blur-sm"
     >
-      {theme === "light" ? <MdLightMode size={24} /> : <CgDarkMode size={24} />}
+      {theme === "light" ? <CgDarkMode size={24} /> : <MdLightMode size={24} />}
     </button>
   );
 };
