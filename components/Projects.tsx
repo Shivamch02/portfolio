@@ -40,6 +40,7 @@ export const Projects = () => {
           icons={[ReactIcon, ReduxIcon, JavascriptIcon, TailwindIcon]}
           githubLink="https://github.com/Shivamch02/movix"
           liveLink="https://movix-psi-two.vercel.app/"
+          imageName="movix.webp"
         />
         <Card
           title="Blog App"
@@ -55,6 +56,7 @@ export const Projects = () => {
           ]}
           githubLink="https://github.com/Shivamch02/medium"
           liveLink="https://medium-seven-flame.vercel.app/signup"
+          imageName="medium.webp"
         />
         <Card
           title="Wanderlust"
@@ -70,6 +72,7 @@ export const Projects = () => {
           ]}
           githubLink="https://github.com/Shivamch02/Wanderlust"
           liveLink="https://wanderlust-vn1l.onrender.com/listings"
+          imageName="wanderlust.webp"
         />
         <Card
           title="Netflix Gpt"
@@ -78,6 +81,7 @@ export const Projects = () => {
           icons={[ReactIcon, ReduxIcon, JavascriptIcon, TailwindIcon]}
           liveLink="https://netflixgpt-ivory.vercel.app/browse"
           githubLink="https://github.com/Shivamch02/netflix-gpt"
+          imageName="netflix-gpt.webp"
         />
         <Card
           title="Easy Eats"
@@ -86,6 +90,7 @@ export const Projects = () => {
           icons={[ReactIcon, ReduxIcon, JavascriptIcon, CssIcon]}
           githubLink="https://github.com/Shivamch02/easy-eat"
           liveLink="https://easyeat.vercel.app/"
+          imageName="easy-eats.webp"
         />
         <Card
           title="Github Explorer Card"
@@ -94,6 +99,7 @@ export const Projects = () => {
           icons={[ReactIcon, TypescriptIcon, TailwindIcon]}
           liveLink="https://exploregithub.vercel.app/"
           githubLink="https://github.com/Shivamch02/Github-card"
+          imageName="github-card.webp"
         />
       </div>
     </div>

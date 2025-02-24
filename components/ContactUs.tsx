@@ -9,13 +9,6 @@ export const ContactUs = () => {
           <p className="xl:text-7xl md:text-5xl sm:text-4xl text-2xl dark:text-blue-700 text-black font-bold sm:font-medium">
             LET&apos;S WORK TOGETHER
           </p>
-          {/* <div className="py-3">
-            <a href="mailto:chshivam53@gmail.com">
-              <button className="dark:bg-blue-700 bg-black text-white px-6 py-2 rounded-full w-full flex gap-2 dark:hover:bg-blue-800">
-                Get in touch <span className="">{<IconArrowRight />}</span>
-              </button>
-            </a>
-          </div> */}
           <div className="py-3">
             <a href="mailto:chshivam53@gmail.com">
               <button className="text-white bg-black dark:bg-blue-800 rounded-full sm:px-5 px-3 py-1.5 flex items-center justify-center group transition-all duration-300">
