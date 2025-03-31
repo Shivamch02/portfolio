@@ -87,7 +87,7 @@ const projectsSchema = {
       name: "Netflix Clone",
       description:
         "A Netflix clone built with React, Redux, and Tailwind CSS. The app allows users to browse and search for movies and TV shows.",
-      url: "https://netflixgpt-ivory.vercel.app/",
+      url: "https://netflixgemini.vercel.app/",
       image: "https://shivamchaurasiya.vercel.app/netflix-gpt.webp",
       creator: {
         "@type": "Person",
@@ -110,27 +110,28 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Shivam Chaurasiya | Full Stack Developer",
+  title: "Shivam Chaurasiya",
   description:
-    "Shivam Chaurasiya is a Full Stack Developer skilled in React, Next.js, TypeScript, and Node.js. Explore my portfolio and projects.",
+    "I'm Shivam Chaurasiya. I'm a Full Stack Web Developer from Varanasi, India, Explore my portfolio of modern web apps and Let's build the future of the web together!",
   keywords: [
     "Shivam Chaurasiya",
+    "Shivam Chaurasia",
     "Full Stack Developer",
-    "Web Developer",
-    "Mern Stack Developer",
-    "Guts Shivam Chaurasiya",
+    "Shivam Shivam",
+    "Chaurasiya",
+    "Chaurasiya Shivam",
     "Shivam Chaurasiya Portfolio",
-    "Shivam Chaurasiya Guts",
+    "Shivam Chaurasia Developer",
   ],
   authors: [
     { name: "Shivam Chaurasiya", url: "https://shivamchaurasiya.vercel.app" },
   ],
   openGraph: {
-    title: "Shivam Chaurasiya | Full Stack Developer",
+    title: "Shivam Chaurasiya",
     description:
-      "Full Stack Developer with expertise in Next.js, React, and TypeScript. Check out my projects and experience.",
+      "I'm Shivam Chaurasiya. I'm a Full Stack Web Developer from Varanasi, India, Explore my portfolio of modern web apps and Let's build the future of the web together!",
     url: "https://shivamchaurasiya.vercel.app",
-    siteName: "Shivam Chaurasiya Portfolio",
+    siteName: "Shivam Chaurasiya",
     images: [
       {
         url: "https://shivamchaurasiya.vercel.app/home.png",
@@ -145,9 +146,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@isthatguts",
     creator: "@isthatguts",
-    title: "Shivam Chaurasiya | Full Stack Developer",
+    title: "Shivam Chaurasiya",
     description:
-      "Transforming ideas into reality! Explore my portfolio with projects like Movix, Medium, and GitHub Card. I'm a Full Stack Developer focused on Next.js, React, and TypeScript. #WebDev #NextJS",
+      "I'm Shivam Chaurasiya. I'm a Full Stack Web Developer from Varanasi, India, Explore my portfolio of modern web apps and Let's build the future of the web together!",
     images: ["https://shivamchaurasiya.vercel.app/home.png"],
   },
   alternates: {

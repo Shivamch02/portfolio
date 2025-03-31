@@ -79,7 +79,7 @@ export const Projects = () => {
           description=" A Netflix clone built with React, Redux, and Tailwind CSS. The app allows users to browse and search for movies and TV shows."
           image={NetflixGptImg}
           icons={[ReactIcon, ReduxIcon, JavascriptIcon, TailwindIcon]}
-          liveLink="https://netflixgpt-ivory.vercel.app/browse"
+          liveLink="https://netflixgemini.vercel.app/"
           githubLink="https://github.com/Shivamch02/netflix-gpt"
           imageName="netflix-gpt.webp"
         />
