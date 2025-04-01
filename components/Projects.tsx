@@ -19,7 +19,7 @@ import TailwindIcon from "./icons/tailwind.svg";
 import CssIcon from "./icons/css.svg";
 import EjsIcon from "./icons/ejs.svg";
 import NextJs from "./icons/nextjs.jpg";
-import InvoiceNow from "./icons/invoicenow.png";
+import InvoiceNow from "./icons/Invoicenow.png";
 import PropertyRental from "./icons/property-rental.png";
 
 export const Projects = () => {
