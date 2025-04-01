@@ -18,6 +18,9 @@ import PrismaIcon from "./icons/prisma.svg";
 import TailwindIcon from "./icons/tailwind.svg";
 import CssIcon from "./icons/css.svg";
 import EjsIcon from "./icons/ejs.svg";
+import NextJs from "./icons/nextjs.jpg";
+import InvoiceNow from "./icons/invoicenow.png";
+import PropertyRental from "./icons/property-rental.png";
 
 export const Projects = () => {
   return (
@@ -100,6 +103,24 @@ export const Projects = () => {
           liveLink="https://exploregithub.vercel.app/"
           githubLink="https://github.com/Shivamch02/Github-card"
           imageName="github-card.webp"
+        />
+        <Card
+          title="Invoice Now"
+          description="A clean and responsive invoice management interface built with Next.js and Tailwind CSS, designed for seamless invoice creation and tracking."
+          image={InvoiceNow}
+          icons={[NextJs, TypescriptIcon, TailwindIcon]}
+          liveLink="https://invoicenow.vercel.app/"
+          githubLink="https://github.com/Shivamch02/invoiceit"
+          imageName="Invoicenow.png"
+        />
+        <Card
+          title="Property Rental"
+          description="A modern and responsive platform for browsing and renting properties, built with React, JavaScript, and Tailwind CSS for a seamless user experience."
+          image={PropertyRental}
+          icons={[ReactIcon, JavascriptIcon, TailwindIcon]}
+          liveLink="https://rentaapartment.vercel.app/"
+          githubLink="https://github.com/Shivamch02/property-rental"
+          imageName="property-rental.png"
         />
       </div>
     </div>
