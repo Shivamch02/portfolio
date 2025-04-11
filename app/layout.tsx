@@ -5,6 +5,7 @@ import { GridBackgroundDemo } from "../components/BackgroundBoxesDemo";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
+import { CursorFollower } from "../components/CursorFollower";
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -178,6 +179,7 @@ export default function RootLayout({
         <GridBackgroundDemo />
         <Analytics />
         <ThemeProvider>{children}</ThemeProvider>
+        <CursorFollower />
       </body>
     </html>
   );
