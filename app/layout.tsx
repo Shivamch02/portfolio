@@ -4,7 +4,6 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
-import { CursorFollower } from "../components/CursorFollower";
 
 const personSchema = {
   "@context": "https://schema.org",
