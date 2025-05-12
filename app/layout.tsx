@@ -177,7 +177,6 @@ export default function RootLayout({
       >
         <Analytics />
         <ThemeProvider>{children}</ThemeProvider>
-        <CursorFollower />
       </body>
     </html>
   );

@@ -8,23 +8,19 @@ import { GridBackgroundDemo } from "./BackgroundBoxesDemo";
 export const HomePage = () => {
   return (
     <div className="relative w-full h-full">
-      {/* Background that should respond to hover */}
       <div className="relative z-0">
         <GridBackgroundDemo />
       </div>
 
-      {/* Foreground content layered above but does not block hover */}
       <div className="grid grid-cols-1 lg:grid-cols-12 absolute inset-0 z-10">
-        <div className="flex flex-col md:justify-center items-center xl:col-span-7 lg:col-span-6 md:col-span-1 md:-mt-10 mt-16 pointer-events-none">
-          {/* Only text and layout here won't block pointer events */}
+        <div className="flex flex-col md:justify-center items-center xl:col-span-7 lg:col-span-6 md:col-span-1 md:-mt-10 mt-16">
           <Hero />
         </div>
-        <div className="xl:col-span-5 lg:col-span-6 w-full md:col-span-1 md:mt-10 sm:mt-32 -mt-20 pointer-events-none">
+        <div className="xl:col-span-5 lg:col-span-6 w-full md:col-span-1 md:mt-10 sm:mt-32 -mt-20">
           <IconCloudDemo />
         </div>
       </div>
 
-      {/* Dock and toggle are interactive */}
       <div className="fixed bottom-10 flex justify-center z-50 w-full pointer-events-auto">
         <ThemeProvider>
           <div className="flex sm:justify-center md:gap-2 w-full max-w-screen-md px-4 items-center">
