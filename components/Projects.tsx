@@ -1,4 +1,5 @@
 import { Card } from "./Card";
+import ThreeRounds from "./icons/3rounds.png";
 import MovixImg from "./icons/movix.png";
 import MediumImg from "./icons/medium.png";
 import NetflixGptImg from "./icons/netflix-gpt.png";
@@ -36,6 +37,23 @@ export const Projects = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:px-20 md:px-6 px-4">
+        <Card
+          title="3rounds.ai"
+          description="3rounds.ai is a web application that allows users to create a customized ai assessment to practice for interviews."
+          image={ThreeRounds}
+          icons={[
+            ReactIcon,
+            TypescriptIcon,
+            JavascriptIcon,
+            TailwindIcon,
+            NodejsIcon,
+            PrismaIcon,
+            ExpressIcon,
+          ]}
+          githubLink=""
+          liveLink="https://3rounds-ai.vercel.app/"
+          imageName="3rounds.png"
+        />
         <Card
           title="Movix"
           description="Movix is a movie search app that allows users to search for movies and view details about them."
