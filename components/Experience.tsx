@@ -27,7 +27,7 @@ export const Experience = () => {
               startDate="June 2025"
               endDate="Present"
               description="I am working as a full stack developer at Yutrp and building a travel related product for my organization. I'm responsible for developing scalable web applications using modern technologies and best practices."
-              skills={["Nextjs", "Reactjs", "PostgreSql", "Typescript", "Nodejs", "Expressjs"]}
+              skills={["Nextjs", "Reactjs", "PostgreSql", "Typescript", "Nodejs", "Expressjs", "TailwindCSS"]}
             />
             <ExperienceCard
               jobTitle="Software Developer - Geogo Infotech"
