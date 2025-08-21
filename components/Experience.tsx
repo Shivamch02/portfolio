@@ -16,9 +16,6 @@ export const Experience = () => {
         
         {/* Timeline Container */}
         <div className="relative">
-          {/* Background timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700 opacity-30"></div>
-          
           {/* Experience Cards */}
           <div className="relative z-10">
             <ExperienceCard
