@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/context/ThemeContext";
 import Head from "next/head";
 
 const personSchema = {

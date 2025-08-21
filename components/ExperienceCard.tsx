@@ -18,14 +18,14 @@ export const ExperienceCard = ({
   skills: string[];
 }) => {
   return (
-    <div className="group relative mb-12 last:mb-0">
+    <div className="group relative mb-12 last:mb-0 overflow-hidden">
       {/* Timeline marker */}
       <div className="absolute left-4 top-8 w-4 h-4 bg-white dark:bg-gray-800 rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-sm group-hover:border-blue-400 dark:group-hover:border-blue-500 transition-colors duration-300 z-10">
         <div className="absolute inset-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       
       {/* Connecting line - only for non-last items */}
-      <div className="absolute left-6 top-12 w-px bg-gray-200 dark:bg-gray-700" style={{ height: 'calc(100% + 3rem)' }}></div>
+      <div className="absolute left-6 top-12 w-px bg-gray-200 dark:bg-gray-700" style={{ height: 'calc(100% + 2rem)' }}></div>
       
       <div className="ml-12">
         <div className="relative bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
