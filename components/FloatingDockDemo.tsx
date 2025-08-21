@@ -53,7 +53,7 @@ export function FloatingDockDemo() {
       icon: (
         <IconBrandX className="h-full w-full text-black dark:text-neutral-300" />
       ),
-      href: "https://x.com/_cvam?s=09",
+      href: "https://x.com/isthatguts",
     },
     {
       title: "Resume",
