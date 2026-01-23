@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8fafc;
+  --background: #ffffff;
   --foreground: #0f172a;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.3);
@@ -28,13 +28,20 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-/* Main container for 60% centered layout */
+/* Main container for centered layout */
 .main-container {
-  max-width: 65%;
+  width: 95%;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    width: 65%;
+  }
 }
 
 @media (max-width: 1280px) {

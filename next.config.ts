@@ -6,7 +6,17 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "assets.aceternity.com",
-        pathname: "/**", // Allows loading from any path within this domain
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        pathname: "/**",
       },
     ],
   },

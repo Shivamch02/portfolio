@@ -1,5 +1,5 @@
 import { Projects } from "@/components/Projects";
-
+import { Tools } from "@/components/Tools";
 import { Experience } from "@/components/Experience";
 import { HomePage } from "@/components/HomePage";
 import { ContactUs } from "@/components/ContactUs";
@@ -11,7 +11,8 @@ export default function Home() {
       <div>
         <HomePage />
       </div>
-      <Projects />  
+      <Projects />
+      <Tools />
       <Experience />
       <Contributions />
       <ContactUs />

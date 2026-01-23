@@ -7,7 +7,7 @@ export default function Contributions() {
   const { theme } = useTheme();
 
   return (
-    <div className="dark:bg-black bg-white section-container">
+    <div className="bg-background text-foreground section-container">
       <div className="main-container">
         {/* Header */}
         <div className="text-center mb-12">
@@ -20,7 +20,7 @@ export default function Contributions() {
         </div>
 
         {/* Calendar Card */}
-        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800/50 rounded-2xl p-6 md:p-8 flex justify-center overflow-x-auto shadow-lg dark:shadow-none">
+        <div className="bg-background border border-gray-200 dark:border-gray-800/50 rounded-2xl p-6 md:p-8 flex justify-center overflow-x-auto shadow-lg dark:shadow-none">
           <GitHubCalendar
             username="shivamch02"
             colorScheme={theme}
