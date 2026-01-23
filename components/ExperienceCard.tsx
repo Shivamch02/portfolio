@@ -1,9 +1,6 @@
-import Image from "next/image";
-import AvatarImg from "./icons/dev.webp";
-import { TagButton } from "./TagButton";
-
 export const ExperienceCard = ({
   jobTitle,
+  company,
   location,
   startDate,
   endDate,
@@ -11,83 +8,66 @@ export const ExperienceCard = ({
   skills,
 }: {
   jobTitle: string;
+  company: string;
   location: string;
   startDate: string;
   endDate: string;
   description: string;
   skills: string[];
 }) => {
+  const isPresent = endDate.toLowerCase() === "present";
+
   return (
-    <div className="group relative mb-12 last:mb-0 overflow-hidden">
-      {/* Timeline marker */}
-      <div className="absolute left-4 top-8 w-4 h-4 bg-white dark:bg-gray-800 rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-sm group-hover:border-blue-400 dark:group-hover:border-blue-500 transition-colors duration-300 z-10">
-        <div className="absolute inset-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div className="group relative pl-12 md:pl-16">
+      {/* Timeline dot with pulse for present */}
+      <div className="absolute left-4 md:left-6 top-8 z-10">
+        <div className={`w-3 h-3 rounded-full border-2 ${isPresent ? 'border-green-400 bg-green-400/20' : 'border-gray-400 dark:border-gray-500 bg-gray-200 dark:bg-gray-800'} group-hover:scale-150 transition-transform duration-300`}>
+          {isPresent && (
+            <span className="absolute inset-0 rounded-full animate-ping bg-green-400/40"></span>
+          )}
+        </div>
       </div>
-      
-      {/* Connecting line - only for non-last items */}
-      <div className="absolute left-6 top-12 w-px bg-gray-200 dark:bg-gray-700" style={{ height: 'calc(100% + 2rem)' }}></div>
-      
-      <div className="ml-12">
-        <div className="relative bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
-          {/* Subtle accent line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
-          <div className="p-6">
-            {/* Header */}
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex items-start space-x-4">
-                <div className="relative flex-shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-lg flex items-center justify-center shadow-sm">
-                    <Image
-                      className="w-8 h-8 object-cover rounded"
-                      height={32}
-                      width={32}
-                      src={AvatarImg}
-                      alt="Company"
-                    />
-                  </div>
-                </div>
-                
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 leading-tight">
-                    {jobTitle}
-                  </h3>
-                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                    <svg className="w-4 h-4 mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    {location}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Date */}
-              <div className="flex-shrink-0 ml-4">
-                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
-                  {startDate} — {endDate}
-                </div>
-              </div>
-            </div>
-            
-            {/* Description */}
-            {description && (
-              <div className="mb-5">
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
-                  {description}
-                </p>
-              </div>
-            )}
-            
-            {/* Skills */}
-            <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <TagButton language={skill} key={skill + index} />
-                ))}
-              </div>
-            </div>
+
+      {/* Card */}
+      <div className="relative bg-white dark:bg-black backdrop-blur-xl border border-gray-200 dark:border-gray-700/40 rounded-2xl p-6 md:p-8 overflow-hidden transition-all duration-500 hover:border-gray-300 dark:hover:border-gray-500/60 shadow-lg hover:shadow-xl dark:shadow-none dark:hover:shadow-[0_0_40px_rgba(255,255,255,0.06)] group-hover:-translate-y-1">
+
+        {/* Subtle corner accent */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/[0.03] to-transparent rounded-2xl"></div>
+
+        {/* Header */}
+        <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
+              {jobTitle}
+            </h3>
+            <p className="text-gray-500 dark:text-gray-400 font-medium flex items-center gap-2">
+              <span className="text-gray-700 dark:text-white/80">{company}</span>
+              <span className="w-1 h-1 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+              <span>{location}</span>
+            </p>
           </div>
+
+          {/* Date badge */}
+          <div className={`inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold tracking-wide ${isPresent ? 'bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20' : 'bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-gray-300 dark:border-gray-700/50'} transition-all duration-300`}>
+            {startDate} — {endDate}
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="relative text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+          {description}
+        </p>
+
+        {/* Skills */}
+        <div className="relative flex flex-wrap gap-2">
+          {skills.map((skill, index) => (
+            <span
+              key={skill + index}
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white hover:border-gray-300 dark:hover:border-white/20 transition-all duration-200"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
     </div>

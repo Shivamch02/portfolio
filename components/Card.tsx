@@ -1,45 +1,39 @@
-import { CardIcon } from "./CardIcon";
 import { CardInfo } from "./CardInfo";
 import { GithubButton } from "./GithubButton";
 import { LiveButton } from "./LiveButton";
 
 export const Card = ({
-  title,
-  description,
-  image,
-  icons,
-  liveLink,
-  githubLink,
-  imageName,
+    title,
+    description,
+    image,
+    liveLink,
+    githubLink,
+    imageName,
+    videoSrc,
 }: {
-  title: string;
-  description: string;
-  image: any;
-  icons: string[];
-  liveLink: string;
-  githubLink: string;
-  imageName: string;
+    title: string;
+    description: string;
+    image: any;
+    liveLink: string;
+    githubLink: string;
+    imageName: string;
+    videoSrc?: string;
 }) => {
-  return (
-    <div className="w-full flex flex-col justify-between h-full rounded-md overflow-hidden shadow-md transform transition duration-200 hover:-translate-y-1 dark:bg-neutral-900/15 backdrop-blur-md border border-white/10">
-      <div className="w-full pb-2">
-        <CardInfo
-          image={image}
-          title={title}
-          description={description}
-          imageName={imageName}
-        />
-      </div>
-      <div className="flex flex-wrap gap-2 px-4">
-        {icons &&
-          icons.map((icon, index) => (
-            <CardIcon icon={icon} key={icon + index} />
-          ))}
-      </div>
-      <div className="px-4 pt-4 pb-2 flex items-center">
-        <LiveButton liveLink={liveLink} />
-        <GithubButton githubLink={githubLink} />
-      </div>
-    </div>
-  );
+    return (
+        <div className="group bg-white dark:bg-black backdrop-blur-sm border border-gray-200 dark:border-gray-800/50 rounded-xl flex flex-col justify-between h-full overflow-hidden shadow-lg hover:shadow-xl dark:shadow-sm dark:hover:shadow-white/5 transition-all duration-300 hover:-translate-y-1">
+            <div className="w-full">
+                <CardInfo
+                    image={image}
+                    title={title}
+                    description={description}
+                    imageName={imageName}
+                    videoSrc={videoSrc}
+                />
+            </div>
+            <div className="px-4 pb-3 flex items-center gap-2">
+                <LiveButton liveLink={liveLink} />
+                <GithubButton githubLink={githubLink} />
+            </div>
+        </div>
+    );
 };

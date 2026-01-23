@@ -1,23 +1,17 @@
-import Image from "next/image";
-import ExternalLink from "./icons/external-link.svg";
+import { HiExternalLink } from "react-icons/hi";
+
 export const LiveButton = ({ liveLink }: { liveLink?: string }) => {
-  return (
-    <div>
-      <a href={liveLink} target="_blank" rel="noreferrer">
-        <button
-          type="button"
-          className="dark:text-gray-900 dark:bg-white dark:border-white dark:hover:bg-gray-100 border focus:ring-4 focus:outline-none dark:focus:ring-gray-100 rounded-md text-sm px-3 py-1.5 text-center inline-flex items-center me-2 mb-2 cursor-pointer font-medium border-black text-black"
-        >
-          <Image
-            className="mr-2"
-            src={ExternalLink}
-            alt="Icon"
-            width={20}
-            height={20}
-          />
-          Live Site
-        </button>
-      </a>
-    </div>
-  );
+    if (!liveLink) return null;
+
+    return (
+        <a href={liveLink} target="_blank" rel="noreferrer">
+            <button
+                type="button"
+                className="px-4 py-2 rounded-lg inline-flex items-center gap-2 text-sm font-medium transition-all duration-300 bg-gray-900 text-white border border-gray-900 hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:border-white dark:hover:bg-gray-100"
+            >
+                <HiExternalLink className="text-base" />
+                Live Demo
+            </button>
+        </a>
+    );
 };

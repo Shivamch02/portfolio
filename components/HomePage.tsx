@@ -1,35 +1,35 @@
-import { IconCloudDemo } from "../components/IconCloud";
-import { Hero } from "@/components/Hero";
+"use client";
+
+import { Hero } from "./Hero";
+import { TimeWidget } from "./TimeWidget";
 import { FloatingDockDemo } from "./FloatingDockDemo";
 import { ThemeProvider } from "../context/ThemeContext";
 import ThemeToggle from "./ThemeToggle";
-import { GridBackgroundDemo } from "./BackgroundBoxesDemo";
 
 export const HomePage = () => {
   return (
-    <div className="relative w-full h-full">
-      <div className="relative z-0">
-        <GridBackgroundDemo />
+    <div className="relative min-h-screen bg-black" id="home">
+      {/* Main content */}
+      <div className="relative z-10 main-container min-h-screen flex items-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-20">
+          {/* Left - Hero Content */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            <Hero />
+          </div>
+
+          {/* Right - Time Widget */}
+          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end">
+            <TimeWidget />
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 absolute inset-0 z-10">
-        <div className="flex flex-col md:justify-center items-center xl:col-span-7 lg:col-span-6 md:col-span-1 md:-mt-10 mt-16">
-          <Hero />
-        </div>
-        <div className="xl:col-span-5 lg:col-span-6 w-full md:col-span-1 md:mt-10 sm:mt-32 -mt-20">
-          <IconCloudDemo />
-        </div>
-      </div>
-
-      <div className="fixed bottom-10 flex justify-center z-50 w-full pointer-events-auto">
+      {/* Floating Dock */}
+      <div className="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-auto">
         <ThemeProvider>
-          <div className="flex sm:justify-center md:gap-2 w-full max-w-screen-md px-4 items-center">
-            <div className="ml-32 sm:ml-0 -mt-7 sm:-mt-0">
-              <FloatingDockDemo />
-            </div>
-            <div className="flex sm:justify-end -ml-24 sm:-ml-0">
-              <ThemeToggle />
-            </div>
+          <div className="flex items-center gap-3">
+            <FloatingDockDemo />
+            <ThemeToggle />
           </div>
         </ThemeProvider>
       </div>

@@ -1,16 +1,17 @@
 import { FaGithub } from "react-icons/fa";
+
 export const GithubButton = ({ githubLink }: { githubLink?: string }) => {
-  return (
-    <div>
-      <a href={githubLink} target="_blank" rel="noreferrer">
-        <button
-          type="button"
-          className="focus:ring-4 focus:outline-none rounded-md text-sm px-3 py-1.5 text-center inline-flex items-center me-2 mb-2 dark:text-white cursor-pointer  font-medium text-white dark:border-white border bg-black border-black"
-        >
-          <FaGithub className="mr-2" />
-          Github
-        </button>
-      </a>
-    </div>
-  );
+    if (!githubLink) return null;
+
+    return (
+        <a href={githubLink} target="_blank" rel="noreferrer">
+            <button
+                type="button"
+                className="px-4 py-2 rounded-lg inline-flex items-center gap-2 text-sm font-medium transition-all duration-300 border-2 text-gray-900 border-gray-900 hover:bg-gray-900 hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-gray-900"
+            >
+                <FaGithub className="text-base" />
+                Github
+            </button>
+        </a>
+    );
 };
