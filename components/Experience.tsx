@@ -2,7 +2,7 @@ import { ExperienceCard } from "./ExperienceCard";
 
 export const Experience = () => {
   return (
-    <div className="dark:bg-black bg-white section-container" id="experience">
+    <div className="bg-background text-foreground section-container" id="experience">
       <div className="main-container">
         {/* Header */}
         <div className="text-center mb-12">

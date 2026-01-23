@@ -2,13 +2,14 @@
 
 import { Hero } from "./Hero";
 import { TimeWidget } from "./TimeWidget";
-import { FloatingDockDemo } from "./FloatingDockDemo";
-import { ThemeProvider } from "../context/ThemeContext";
-import ThemeToggle from "./ThemeToggle";
+import { LinksCard } from "./LinksCard";
 
 export const HomePage = () => {
   return (
-    <div className="relative min-h-screen bg-black" id="home">
+    <div className="relative min-h-screen bg-background text-foreground dark:bg-grid-white/[0.1] bg-grid-black/[0.1] flex items-center justify-center overflow-hidden" id="home">
+      {/* Radial gradient mask for the grid */}
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+
       {/* Main content */}
       <div className="relative z-10 main-container min-h-screen flex items-center">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-20">
@@ -17,21 +18,12 @@ export const HomePage = () => {
             <Hero />
           </div>
 
-          {/* Right - Time Widget */}
-          <div className="lg:col-span-5 flex items-center justify-center lg:justify-end">
+          {/* Right - Links & Time Widget */}
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-center gap-6">
+            <LinksCard />
             <TimeWidget />
           </div>
         </div>
-      </div>
-
-      {/* Floating Dock */}
-      <div className="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-auto">
-        <ThemeProvider>
-          <div className="flex items-center gap-3">
-            <FloatingDockDemo />
-            <ThemeToggle />
-          </div>
-        </ThemeProvider>
       </div>
     </div>
   );

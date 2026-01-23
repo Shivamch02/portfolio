@@ -8,7 +8,7 @@ import InvoiceNow from "./icons/Invoicenow.png";
 
 export const Projects = () => {
     return (
-        <div className="dark:bg-black bg-white section-container" id="projects">
+        <div className="bg-background text-foreground section-container" id="projects">
             <div className="main-container">
                 {/* Header */}
                 <div className="text-center mb-12">
@@ -21,8 +21,8 @@ export const Projects = () => {
                     </p>
                 </div>
 
-                {/* Projects Grid - 2 columns */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Projects Grid - 3 columns */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                     <Card
                         title="3rounds.ai"
                         description="AI-powered assessment platform for interview preparation with customized practice sessions."

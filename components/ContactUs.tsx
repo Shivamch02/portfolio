@@ -3,10 +3,10 @@ import { FaArrowRight } from "react-icons/fa";
 
 export const ContactUs = () => {
     return (
-        <div className="dark:bg-black bg-white section-container pb-32 mb-16" id="contact">
+        <div className="bg-background text-foreground section-container pb-32 mb-16" id="contact">
             <div className="main-container">
                 {/* CTA Section */}
-                <div className="relative overflow-hidden bg-white dark:bg-black border border-gray-200 dark:border-gray-800/50 rounded-3xl p-12 md:p-16 text-center mb-16 shadow-lg dark:shadow-none">
+                <div className="relative overflow-hidden bg-background border border-gray-200 dark:border-gray-800/50 rounded-3xl p-12 md:p-16 text-center mb-16 shadow-lg dark:shadow-none">
                     {/* Background decorations */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/[0.02] rounded-full blur-3xl"></div>

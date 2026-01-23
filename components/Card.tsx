@@ -20,7 +20,7 @@ export const Card = ({
     videoSrc?: string;
 }) => {
     return (
-        <div className="group bg-white dark:bg-black backdrop-blur-sm border border-gray-200 dark:border-gray-800/50 rounded-xl flex flex-col justify-between h-full overflow-hidden shadow-lg hover:shadow-xl dark:shadow-sm dark:hover:shadow-white/5 transition-all duration-300 hover:-translate-y-1">
+        <div className="group bg-background backdrop-blur-sm border border-gray-200 dark:border-gray-800/50 rounded-xl flex flex-col justify-between h-full overflow-hidden shadow-lg hover:shadow-xl dark:shadow-sm dark:hover:shadow-white/5 transition-all duration-300 hover:-translate-y-1 w-full max-w-md mx-auto">
             <div className="w-full">
                 <CardInfo
                     image={image}
