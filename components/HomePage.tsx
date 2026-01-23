@@ -1,8 +1,6 @@
 "use client";
 
 import { Hero } from "./Hero";
-import { TimeWidget } from "./TimeWidget";
-import { LinksCard } from "./LinksCard";
 
 export const HomePage = () => {
   return (
@@ -11,18 +9,9 @@ export const HomePage = () => {
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
       {/* Main content */}
-      <div className="relative z-10 main-container min-h-screen flex items-center">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-20">
-          {/* Left - Hero Content */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            <Hero />
-          </div>
-
-          {/* Right - Links & Time Widget */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-center gap-6">
-            <LinksCard />
-            <TimeWidget />
-          </div>
+      <div className="relative z-10 main-container min-h-screen flex items-center justify-center">
+        <div className="w-full flex justify-center py-20">
+          <Hero />
         </div>
       </div>
     </div>

@@ -53,7 +53,7 @@ export const LinksCard = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="group/card relative bg-white/90 dark:bg-[#0A0A0A] backdrop-blur-xl rounded-[2rem] p-4 sm:p-5 shadow-xl dark:shadow-[0_0_50px_-12px_rgba(255,255,255,0.1)] border border-gray-200 dark:border-white/10 w-full max-w-[260px] sm:max-w-[280px]"
+            className="group/card relative bg-white/90 dark:bg-[#0A0A0A] backdrop-blur-xl rounded-[2.5rem] p-4 sm:p-5 shadow-xl dark:shadow-[0_0_50px_-12px_rgba(255,255,255,0.1)] border border-gray-200 dark:border-white/10 w-full max-w-[260px] sm:max-w-[280px]"
         >
             <div className="relative grid grid-cols-3 gap-3">
                 {/* Theme Toggle Box */}
