@@ -1,6 +1,7 @@
 "use client";
 
 import { Hero } from "./Hero";
+import { motion } from "framer-motion";
 
 export const HomePage = () => {
   return (
@@ -14,6 +15,29 @@ export const HomePage = () => {
           <Hero />
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500 font-bold">Scroll</span>
+        <div className="w-[22px] h-[36px] rounded-full border-2 border-gray-300 dark:border-white/20 flex justify-center p-1">
+          <motion.div
+            animate={{
+              y: [0, 12, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-1 h-2 rounded-full bg-gray-400 dark:bg-white/40"
+          />
+        </div>
+      </motion.div>
     </div>
   );
 };
