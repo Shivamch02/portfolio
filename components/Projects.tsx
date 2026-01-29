@@ -5,7 +5,7 @@ import { Card } from "./Card";
 import ThreeRounds from "./icons/3rounds.png";
 import MovixImg from "./icons/movix.png";
 import MediumImg from "./icons/medium.png";
-import EasyEatsImg from "./icons/easy-eats.png";
+import EasyEatsImg from "../public/easy-eats.png";
 import GithubCardImg from "./icons/github-card.png";
 import InvoiceNow from "./icons/Invoicenow.png";
 
@@ -42,7 +42,7 @@ export const Projects = () => {
             image: EasyEatsImg,
             githubLink: "https://github.com/Shivamch02/easy-eat",
             liveLink: "https://easyeat.vercel.app/",
-            imageName: "easy-eats.webp",
+            imageName: "easy-eats.png",
         },
         {
             title: "Github Explorer",
