@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import Head from "next/head";
 
 const personSchema = {
@@ -175,7 +176,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Analytics />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ScrollProgressBar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
